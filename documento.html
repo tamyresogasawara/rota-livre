@@ -1,0 +1,570 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <title>Rota Livre — Documento de Entrega</title>
+  <meta name="description" content="Documento de entrega da atividade substitutiva: plataforma Rota Livre." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" />
+  <style>
+    :root {
+      --ink: #1f2421;
+      --muted: #6b6256;
+      --bg: #faf7f2;
+      --surface: #ffffff;
+      --primary: #b5532a;
+      --primary-ink: #8a3f1f;
+      --accent: #3f6b3a;
+      --line: #e6dfd3;
+      --soft: #f1e9dc;
+      --font-display: "Fraunces", Georgia, serif;
+      --font-body: "Inter", system-ui, -apple-system, sans-serif;
+    }
+
+    @page {
+      size: A4 portrait;
+      margin: 18mm 16mm;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body { background: var(--bg); }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: var(--font-body);
+      font-size: 11pt;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* Page wrappers (for on-screen reading; print uses @page) */
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      padding: 22mm 18mm;
+      margin: 0 auto 12mm;
+      background: var(--bg);
+      page-break-after: always;
+    }
+    .page:last-child { page-break-after: auto; }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-display);
+      color: var(--ink);
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      margin: 0 0 0.4em;
+      font-weight: 600;
+    }
+    h1 { font-size: 36pt; }
+    h2 { font-size: 18pt; margin-top: 8mm; }
+    h3 { font-size: 12pt; margin-top: 5mm; color: var(--primary-ink); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 700; font-family: var(--font-body); }
+    p { margin: 0 0 8pt; color: var(--ink); }
+    strong { color: var(--ink); font-weight: 600; }
+    em { color: var(--muted); }
+
+    .eyebrow {
+      font-family: var(--font-body);
+      font-size: 9pt;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    a { color: var(--primary-ink); text-decoration: underline; text-underline-offset: 2px; }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 14pt;
+      color: var(--ink);
+    }
+    .brand-mark {
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-weight: 700;
+    }
+
+    /* COVER */
+    .cover {
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.65) 100%), url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=70");
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 22mm 18mm 18mm;
+    }
+    .cover .brand, .cover .brand .brand-mark { color: #fff; }
+    .cover .brand .brand-mark { background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.4); }
+    .cover .badge {
+      display: inline-block;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: 999px;
+      padding: 4px 12px;
+      font-size: 8pt;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin-bottom: 14pt;
+    }
+    .cover h1 { color: #fff; font-size: 48pt; line-height: 1.05; max-width: 70%; }
+    .cover .lede { color: rgba(255, 255, 255, 0.92); font-size: 14pt; max-width: 70%; font-family: var(--font-display); font-weight: 500; }
+    .cover .meta {
+      border-top: 1px solid rgba(255, 255, 255, 0.3);
+      padding-top: 18pt;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12pt;
+      font-size: 9pt;
+    }
+    .cover .meta .label { text-transform: uppercase; letter-spacing: 0.12em; opacity: 0.7; font-size: 7.5pt; }
+    .cover .meta .value { font-family: var(--font-display); font-size: 11pt; font-weight: 600; }
+
+    /* Sections */
+    .section-head {
+      border-top: 2px solid var(--primary);
+      padding-top: 6pt;
+      margin-bottom: 10pt;
+    }
+    .lede {
+      font-family: var(--font-display);
+      font-size: 13pt;
+      line-height: 1.4;
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 14pt 16pt;
+      margin: 6pt 0;
+    }
+    .card h4 { font-family: var(--font-display); font-size: 11pt; margin: 0 0 4pt; color: var(--ink); }
+    .card p { margin: 0; color: var(--muted); font-size: 10pt; }
+
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10pt; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8pt; }
+
+    .swatch-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8pt;
+      margin: 8pt 0;
+    }
+    .swatch {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      overflow: hidden;
+      background: var(--surface);
+    }
+    .swatch .chip {
+      height: 60px;
+    }
+    .swatch .info {
+      padding: 8pt 10pt;
+      font-size: 9pt;
+    }
+    .swatch .info strong { display: block; font-family: var(--font-display); font-size: 10pt; }
+    .swatch .info code { color: var(--muted); font-family: "SFMono-Regular", Menlo, monospace; font-size: 8.5pt; }
+
+    .type-sample {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 14pt 16pt;
+      background: var(--surface);
+    }
+    .type-sample .display {
+      font-family: var(--font-display);
+      font-size: 26pt;
+      line-height: 1.1;
+      margin: 0 0 4pt;
+      color: var(--ink);
+    }
+    .type-sample .body-sample {
+      font-family: var(--font-body);
+      font-size: 10.5pt;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    ul.clean { padding-left: 18pt; margin: 0 0 8pt; }
+    ul.clean li { margin-bottom: 4pt; }
+
+    .pill-row { display: flex; gap: 6pt; flex-wrap: wrap; margin: 6pt 0; }
+    .pill {
+      background: var(--soft);
+      color: var(--primary-ink);
+      border-radius: 999px;
+      padding: 3pt 10pt;
+      font-size: 8.5pt;
+      font-weight: 600;
+    }
+
+    table.crit {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8pt;
+      font-size: 10pt;
+    }
+    table.crit th, table.crit td {
+      text-align: left;
+      padding: 8pt 10pt;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+    table.crit th {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 9pt;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+    }
+    table.crit td:first-child { font-family: var(--font-display); color: var(--ink); width: 36%; }
+
+    .footer {
+      margin-top: 16pt;
+      padding-top: 10pt;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      font-size: 8.5pt;
+      color: var(--muted);
+    }
+
+    .links-block {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 14pt 16pt;
+      margin-top: 10pt;
+    }
+    .links-block .link-row { display: grid; grid-template-columns: 110px 1fr; gap: 8pt; padding: 4pt 0; }
+    .links-block .link-row .label {
+      font-size: 8.5pt;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      font-weight: 700;
+      align-self: center;
+    }
+    .links-block code {
+      font-family: "SFMono-Regular", Menlo, monospace;
+      font-size: 9.5pt;
+      color: var(--primary-ink);
+      word-break: break-all;
+    }
+
+    .nav-preview {
+      display: flex;
+      gap: 4pt;
+      flex-wrap: wrap;
+      margin: 8pt 0 0;
+    }
+    .nav-preview span {
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 3pt 9pt;
+      font-size: 9pt;
+      background: var(--surface);
+      color: var(--ink);
+    }
+    .nav-preview span.active {
+      border-bottom: 2px solid var(--primary);
+      color: var(--primary-ink);
+      font-weight: 600;
+    }
+
+    @media print {
+      body { background: var(--bg); }
+      .page { margin: 0; padding: 0; width: auto; min-height: 0; }
+      .cover { padding: 18mm 14mm 14mm; min-height: calc(297mm - 36mm); }
+      .footer { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============= PAGE 1 — COVER ============= -->
+  <section class="page cover">
+    <header>
+      <div class="brand">
+        <span class="brand-mark">R</span>
+        <span>Rota Livre</span>
+      </div>
+    </header>
+
+    <div>
+      <span class="badge">Global Solutions · Atividade Substitutiva</span>
+      <h1>Roteiros que ninguém te vendeu.</h1>
+      <p class="lede">Plataforma colaborativa de relatos e rotas de turismo independente — documento de entrega do projeto.</p>
+    </div>
+
+    <div class="meta">
+      <div>
+        <div class="label">Aluno(a)</div>
+        <div class="value">_NOME COMPLETO_</div>
+      </div>
+      <div>
+        <div class="label">RM</div>
+        <div class="value">_RM_</div>
+      </div>
+      <div>
+        <div class="label">Data</div>
+        <div class="value">Junho de 2026</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============= PAGE 2 — PLATAFORMA + TEMA ============= -->
+  <section class="page">
+    <div class="section-head">
+      <span class="eyebrow">01 · A plataforma</span>
+      <h2>O que é a Rota Livre</h2>
+    </div>
+    <p class="lede">Rota Livre é uma comunidade digital onde viajantes brasileiros publicam rotas autorais, itinerários dia a dia, dicas reais e fotos de destinos fora do circuito turístico convencional.</p>
+    <p>O foco é o turismo independente — trekking, cicloviagens, viagens fluviais e roteiros culturais — em uma plataforma onde cada relato é assinado por quem realmente percorreu o caminho. Não há agências, conteúdo patrocinado ou pacotes prontos: só pessoas trocando experiência.</p>
+
+    <h3>Para quem serve</h3>
+    <div class="grid-3">
+      <div class="card">
+        <h4>Viajantes independentes</h4>
+        <p>Quem viaja sozinho, em duplas ou pequenos grupos e quer fugir do "pacote pronto".</p>
+      </div>
+      <div class="card">
+        <h4>Viajantes experientes</h4>
+        <p>Quem quer compartilhar conhecimento, apoiar comunidades locais e construir reputação na cena.</p>
+      </div>
+      <div class="card">
+        <h4>Iniciantes</h4>
+        <p>Pessoas em busca de roteiros testados e descritos por quem realmente percorreu o caminho.</p>
+      </div>
+    </div>
+
+    <h3>Qual problema resolve</h3>
+    <p>Sites tradicionais de turismo privilegiam destinos comerciais e conteúdo patrocinado. Faltam fontes confiáveis, autorais e bem organizadas para roteiros independentes. A Rota Livre centraliza esses relatos em um espaço com identidade visual coerente, busca, filtros e perfis de viajantes — funcionando como uma <em>revista colaborativa</em> de viagem, não como uma vitrine de pacotes.</p>
+
+    <div class="section-head" style="margin-top: 14pt;">
+      <span class="eyebrow">02 · Por que esse tema</span>
+      <h2>Justificativa da escolha</h2>
+    </div>
+    <p>O edital sugeriu, entre outras, a ideia de uma "plataforma de relatos e rotas de viagem para turismo independente". A escolha desse caminho se justifica por três razões:</p>
+    <ul class="clean">
+      <li><strong>Relevância.</strong> O turismo independente cresceu fortemente no pós-pandemia, mas as plataformas existentes ainda são fragmentadas em redes sociais genéricas e blogs isolados — falta um espaço curado e com identidade.</li>
+      <li><strong>Riqueza visual.</strong> O tema é naturalmente fotográfico e geográfico, o que permite explorar tipografia editorial, hierarquia clara e o uso da imagem como elemento narrativo principal.</li>
+      <li><strong>Espaço para interatividade.</strong> O conceito exige busca, filtros, formulário de publicação, perfis de pessoas e galeria de fotos — exercitando integralmente os critérios técnicos (HTML, CSS, JavaScript e acessibilidade) avaliados na entrega.</li>
+    </ul>
+
+    <div class="footer">
+      <span>Rota Livre · Documento de entrega</span>
+      <span>2 / 5</span>
+    </div>
+  </section>
+
+  <!-- ============= PAGE 3 — IDENTIDADE VISUAL ============= -->
+  <section class="page">
+    <div class="section-head">
+      <span class="eyebrow">03 · Identidade visual</span>
+      <h2>Decisões de design</h2>
+    </div>
+    <p class="lede">A identidade traduz o conceito de <em>viagem independente brasileira</em>: terra, mata, sol baixo e papel de revista.</p>
+
+    <h3>Paleta · "earthy / adventurous"</h3>
+    <p>A escolha pela paleta terrosa, em vez do azul comum às marcas de turismo de massa, comunica autonomia, contato com a natureza e materialidade. Em vez de evocar o avião ou a praia paradisíaca, a paleta evoca a estrada de terra, a serra ao amanhecer e o caderno de campo.</p>
+    <div class="swatch-grid">
+      <div class="swatch">
+        <div class="chip" style="background: #b5532a"></div>
+        <div class="info"><strong>Terracota</strong><code>#B5532A</code></div>
+      </div>
+      <div class="swatch">
+        <div class="chip" style="background: #3f6b3a"></div>
+        <div class="info"><strong>Verde-mata</strong><code>#3F6B3A</code></div>
+      </div>
+      <div class="swatch">
+        <div class="chip" style="background: #faf7f2; border-bottom: 1px solid #e6dfd3"></div>
+        <div class="info"><strong>Areia</strong><code>#FAF7F2</code></div>
+      </div>
+      <div class="swatch">
+        <div class="chip" style="background: #1f2421"></div>
+        <div class="info"><strong>Tinta</strong><code>#1F2421</code></div>
+      </div>
+    </div>
+    <p style="font-size: 9.5pt; color: var(--muted);">A combinação foi validada quanto a contraste: tinta sobre areia oferece razão superior a 12:1 (AAA pelo WCAG), e terracota sobre areia ultrapassa 4.5:1 (AA). Existe também variante em modo escuro, ativada via <code>prefers-color-scheme</code>.</p>
+
+    <h3>Tipografia</h3>
+    <div class="grid-2">
+      <div class="type-sample">
+        <div class="display">Fraunces</div>
+        <p class="body-sample">Serifada de alto contraste, usada em títulos, heros e nomes de seção. Empresta à interface uma sensação editorial — de revista de viagem impressa, não de catálogo digital.</p>
+      </div>
+      <div class="type-sample">
+        <div class="display" style="font-family: var(--font-body); font-weight: 700; font-size: 22pt;">Inter</div>
+        <p class="body-sample">Sans-serif neutra e legível, usada no corpo de texto, navegação e formulários. Mantém leitura confortável em qualquer tamanho — incluindo em telas pequenas e dispositivos de baixa densidade.</p>
+      </div>
+    </div>
+
+    <h3>Navegação e hierarquia</h3>
+    <p>O header é fixo (<em>sticky</em>) para que a navegação esteja sempre disponível durante a leitura. O link ativo é destacado por sublinhado terracota e <code>aria-current="page"</code>. A hierarquia de informação segue o padrão editorial: olho de seção (eyebrow) em maiúsculas → título serifado → texto de apoio em Inter → blocos de conteúdo em cards.</p>
+    <div class="nav-preview">
+      <span class="active">Início</span><span>Explorar</span><span>Comunidade</span><span>Compartilhar relato</span>
+    </div>
+
+    <h3>Microcopy e tom de voz</h3>
+    <p>O texto da plataforma é direto, em primeira pessoa do plural, com leve coloquialidade ("roteiros que ninguém te vendeu"). Evita superlativos publicitários e termos como "incrível" ou "imperdível" — reforçando o posicionamento autoral e crítico.</p>
+
+    <div class="footer">
+      <span>Rota Livre · Documento de entrega</span>
+      <span>3 / 5</span>
+    </div>
+  </section>
+
+  <!-- ============= PAGE 4 — UX, INTERATIVIDADE, ACESSIBILIDADE ============= -->
+  <section class="page">
+    <div class="section-head">
+      <span class="eyebrow">04 · Experiência do usuário</span>
+      <h2>Navegação, interatividade e UX</h2>
+    </div>
+
+    <h3>Estrutura do site</h3>
+    <p>A plataforma é composta por seis páginas, todas integradas pelo mesmo cabeçalho e rodapé:</p>
+    <ul class="clean">
+      <li><strong>Início</strong> — apresentação da plataforma, rotas em destaque e viajantes em destaque.</li>
+      <li><strong>Explorar</strong> — listagem completa de rotas com busca, filtros por região/duração/dificuldade e ordenação.</li>
+      <li><strong>Detalhe da rota</strong> — itinerário dia a dia, galeria com carrossel, metadados (custo, época, dificuldade), dicas e comentários.</li>
+      <li><strong>Compartilhar relato</strong> — formulário de publicação com validação acessível e prévia de imagem.</li>
+      <li><strong>Comunidade</strong> — grid de viajantes da plataforma com filtro por região.</li>
+      <li><strong>Perfil</strong> — bio, badges, estatísticas e rotas publicadas por viajante.</li>
+    </ul>
+
+    <h3>Interatividade implementada</h3>
+    <div class="pill-row">
+      <span class="pill">Busca em tempo real</span>
+      <span class="pill">Filtros combinados</span>
+      <span class="pill">Ordenação</span>
+      <span class="pill">Favoritar</span>
+      <span class="pill">Seguir viajante</span>
+      <span class="pill">Carrossel + teclado</span>
+      <span class="pill">Validação acessível</span>
+      <span class="pill">Pré-visualização de imagem</span>
+      <span class="pill">Toast de feedback</span>
+      <span class="pill">Modo escuro</span>
+      <span class="pill">Compartilhar (Web Share API)</span>
+      <span class="pill">Persistência via localStorage</span>
+    </div>
+    <p style="margin-top: 8pt;">Todas as ações de longo prazo (favoritos, viajantes seguidos, relatos publicados pelo usuário) ficam salvas no <code>localStorage</code> do navegador. O envio do formulário gera uma rota nova que aparece imediatamente em "Explorar".</p>
+
+    <div class="section-head" style="margin-top: 14pt;">
+      <span class="eyebrow">05 · Acessibilidade</span>
+      <h2>Recursos implementados</h2>
+    </div>
+    <ul class="clean">
+      <li><strong>Estrutura semântica</strong> com landmarks <code>header</code>, <code>nav</code>, <code>main</code> e <code>footer</code>, hierarquia de cabeçalhos sem pulos e <code>lang="pt-BR"</code>.</li>
+      <li><strong>Skip link</strong> "Pular para o conteúdo" como primeiro elemento focável, para uso com teclado e leitores de tela.</li>
+      <li><strong>Foco visível</strong> em todos os elementos interativos via <code>:focus-visible</code> com contorno terracota.</li>
+      <li><strong>Atributos ARIA</strong> apropriados: <code>aria-label</code> em botões só-ícone, <code>aria-pressed</code> em toggles, <code>aria-current</code> na navegação ativa, <code>aria-live="polite"</code> em regiões dinâmicas e <code>aria-roledescription</code> no carrossel.</li>
+      <li><strong>Formulários</strong> com <code>&lt;label&gt;</code> associado, mensagens de erro vinculadas via <code>aria-describedby</code> e <code>role="alert"</code> para anúncio imediato.</li>
+      <li><strong>Carrossel</strong> com suporte a teclado (setas ←/→), além de cliques nos botões e nos pontos.</li>
+      <li><strong>Imagens</strong> com <code>alt</code> descritivo quando informativas e <code>alt=""</code> quando puramente decorativas.</li>
+      <li><strong>Contraste</strong> mínimo de 4.5:1 (corpo) e 3:1 (UI), validado nos tokens da paleta.</li>
+      <li><strong>Respeito ao usuário</strong>: <code>@media (prefers-reduced-motion: reduce)</code> desativa transições para quem prefere menos movimento.</li>
+    </ul>
+
+    <div class="footer">
+      <span>Rota Livre · Documento de entrega</span>
+      <span>4 / 5</span>
+    </div>
+  </section>
+
+  <!-- ============= PAGE 5 — IMPLEMENTAÇÃO + LINKS ============= -->
+  <section class="page">
+    <div class="section-head">
+      <span class="eyebrow">06 · Implementação técnica</span>
+      <h2>Como o site foi construído</h2>
+    </div>
+    <p>O projeto é 100% estático, sem etapa de build, para máxima portabilidade e simplicidade de avaliação. Usa HTML semântico, CSS com tokens via <code>:root</code> e JavaScript puro em módulos IIFE. Tailwind CSS (CDN) é incluído para utilidades pontuais; ícones via Lucide; fontes via Google Fonts.</p>
+
+    <div class="grid-2">
+      <div class="card">
+        <h4>Arquivos HTML</h4>
+        <p><code>index.html</code>, <code>explorar.html</code>, <code>rota.html</code>, <code>compartilhar.html</code>, <code>comunidade.html</code>, <code>perfil.html</code></p>
+      </div>
+      <div class="card">
+        <h4>JavaScript</h4>
+        <p><code>data.js</code> (mock de 11 rotas + 6 viajantes), <code>main.js</code> (header/tema/toast/favoritos) e um script por página.</p>
+      </div>
+      <div class="card">
+        <h4>CSS</h4>
+        <p><code>assets/css/styles.css</code> — tokens, componentes, modo escuro e print-friendly.</p>
+      </div>
+      <div class="card">
+        <h4>Publicação</h4>
+        <p>GitHub Pages servindo <code>main</code> a partir da raiz (<code>/</code>), com arquivo <code>.nojekyll</code> para garantir o serviço de assets.</p>
+      </div>
+    </div>
+
+    <h3>Mapeamento dos critérios do edital</h3>
+    <table class="crit">
+      <thead>
+        <tr><th>Critério</th><th>Onde se manifesta no projeto</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Clareza e criatividade na proposta</td><td>Conceito de "rotas autorais" e tom editorial; nome e identidade próprios.</td></tr>
+        <tr><td>Qualidade do design visual e hierarquia</td><td>Sistema de tokens, tipografia dupla (Fraunces + Inter), heros editoriais e grid de cards.</td></tr>
+        <tr><td>Navegação, interatividade e UX</td><td>Header fixo com estado ativo, busca, filtros, carrossel acessível, formulário validado, persistência local.</td></tr>
+        <tr><td>Funcionalidade e publicação no GitHub</td><td>Site estático funcional, publicado em GitHub Pages a partir de repositório público.</td></tr>
+        <tr><td>Coerência entre conceito e execução</td><td>Paleta terrosa, fotografias de paisagem, copy de viajante independente em toda a interface.</td></tr>
+        <tr><td>Recursos de acessibilidade</td><td>Skip link, landmarks, ARIA, foco visível, contraste AA, suporte a teclado, <code>prefers-reduced-motion</code>.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="section-head" style="margin-top: 16pt;">
+      <span class="eyebrow">07 · Links de entrega</span>
+      <h2>Onde encontrar o projeto</h2>
+    </div>
+    <div class="links-block">
+      <div class="link-row">
+        <span class="label">Site no ar</span>
+        <code>https://tamyresogasawara.github.io/rota-livre/</code>
+      </div>
+      <div class="link-row">
+        <span class="label">Repositório</span>
+        <code>https://github.com/tamyresogasawara/rota-livre</code>
+      </div>
+      <div class="link-row">
+        <span class="label">Stack</span>
+        <code>HTML5 · CSS · JavaScript · Tailwind (CDN) · Lucide · Google Fonts</code>
+      </div>
+      <div class="link-row">
+        <span class="label">Aluno(a)</span>
+        <code>_NOME COMPLETO_ — RM _RM_</code>
+      </div>
+    </div>
+
+    <p style="margin-top: 12pt; font-size: 9.5pt; color: var(--muted);">Conteúdo dos relatos, dos viajantes e das estatísticas é fictício, criado especificamente para fins didáticos. Imagens utilizadas são do banco <strong>Unsplash</strong> sob licença gratuita; ícones do conjunto <strong>Lucide</strong> (ISC). Tipografias <strong>Fraunces</strong> e <strong>Inter</strong> via Google Fonts.</p>
+
+    <div class="footer">
+      <span>Rota Livre · Documento de entrega</span>
+      <span>5 / 5</span>
+    </div>
+  </section>
+
+</body>
+</html>
