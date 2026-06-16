@@ -35,10 +35,7 @@
       const region = filter?.value || "todos";
       const list = region === "todos"
         ? travelers
-        : travelers.filter((t) => (t.routes || []).some((rid) => {
-            const route = window.RL.getRoute(rid);
-            return route && route.region === region;
-          }));
+        : travelers.filter((t) => t.region === region);
       grid.innerHTML = list.length
         ? list.map(travelerCard).join("")
         : `<div class="empty-state" style="grid-column: 1 / -1;">Nenhum viajante encontrado nessa região.</div>`;
