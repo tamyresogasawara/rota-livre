@@ -8,9 +8,9 @@ Projeto desenvolvido para a **atividade substitutiva — Global Solutions** (FIA
 
 ## Identificação
 
-- **RM:** _preencher_
-- **Nome completo:** _preencher_
-- **Link do site publicado:** _preencher após publicar no GitHub Pages, ex.: `https://<usuario>.github.io/rota-livre/`_
+- **RM:** 552055
+- **Nome completo:** Tamyres Ogasawara Macedo
+- **Link do site publicado:** https://tamyresogasawara.github.io/rota-livre/
 
 ---
 
