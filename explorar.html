@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Explorar rotas — Rota Livre</title>
+  <meta name="description" content="Encontre rotas de turismo independente filtrando por região, duração e dificuldade. Resultados em tempo real." />
+  <meta name="theme-color" content="#b5532a" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><circle cx='12' cy='12' r='12' fill='%23B5532A'/><text x='50%25' y='58%25' font-family='Georgia' font-size='14' text-anchor='middle' fill='white'>R</text></svg>" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Pular para o conteúdo</a>
+
+  <header class="site-header" role="banner">
+    <div class="container bar">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">R</span><span>Rota Livre</span>
+      </a>
+      <nav aria-label="Principal">
+        <ul class="nav-list">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="explorar.html">Explorar</a></li>
+          <li><a href="comunidade.html">Comunidade</a></li>
+          <li><a href="compartilhar.html">Compartilhar relato</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle" data-theme-toggle aria-label="Mudar tema"><i data-lucide="sun-moon"></i></button>
+        <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false"><i data-lucide="menu"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="container section" style="padding-top: 48px; padding-bottom: 24px;">
+      <span class="eyebrow">Explorar</span>
+      <h1>Rotas de turismo independente</h1>
+      <p style="max-width: 640px; color: var(--color-muted);">Procure por destino ou filtre por região, duração e dificuldade. Tudo escrito por viajantes da comunidade.</p>
+    </section>
+
+    <section class="container" aria-labelledby="resultados-h" style="padding-bottom: 80px;">
+      <form class="toolbar" data-routes-toolbar role="search" aria-label="Filtrar rotas">
+        <div>
+          <label for="q">Buscar</label>
+          <input id="q" type="search" name="q" placeholder="ex.: cachoeira, bike, cerrado" autocomplete="off" />
+        </div>
+        <div>
+          <label for="region">Região</label>
+          <select id="region" name="region">
+            <option value="todos">Todas</option>
+            <option value="Norte">Norte</option>
+            <option value="Nordeste">Nordeste</option>
+            <option value="Centro-Oeste">Centro-Oeste</option>
+            <option value="Sudeste">Sudeste</option>
+            <option value="Sul">Sul</option>
+          </select>
+        </div>
+        <div>
+          <label for="duration">Duração</label>
+          <select id="duration" name="duration">
+            <option value="todas">Qualquer</option>
+            <option value="short">Até 3 dias</option>
+            <option value="medium">4 a 6 dias</option>
+            <option value="long">7 dias ou mais</option>
+          </select>
+        </div>
+        <div>
+          <label for="difficulty">Dificuldade</label>
+          <select id="difficulty" name="difficulty">
+            <option value="todos">Qualquer</option>
+            <option value="Iniciante">Iniciante</option>
+            <option value="Intermediário">Intermediário</option>
+            <option value="Avançado">Avançado</option>
+          </select>
+        </div>
+        <div>
+          <label for="sort">Ordenar</label>
+          <select id="sort" name="sort">
+            <option value="recent">Mais recentes</option>
+            <option value="likes">Mais curtidas</option>
+          </select>
+        </div>
+      </form>
+
+      <div class="results-meta">
+        <span id="resultados-h" data-routes-count aria-live="polite">Carregando…</span>
+        <button class="btn btn-ghost" data-clear-filters type="button"><i data-lucide="eraser"></i> Limpar filtros</button>
+      </div>
+
+      <div class="cards-grid" data-routes-grid></div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container grid">
+      <div>
+        <a href="index.html" class="brand"><span class="brand-mark">R</span><span>Rota Livre</span></a>
+        <p style="margin-top: 12px;">Plataforma colaborativa de relatos e rotas de turismo independente no Brasil.</p>
+      </div>
+      <div>
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="explorar.html">Explorar rotas</a></li>
+          <li><a href="comunidade.html">Comunidade</a></li>
+          <li><a href="compartilhar.html">Compartilhar relato</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Créditos</h4>
+        <ul>
+          <li>Imagens: Unsplash (uso editorial)</li>
+          <li>Ícones: Lucide</li>
+          <li>Tipografia: Fraunces &amp; Inter (Google Fonts)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="container credits">
+      <span>© <span data-year>2026</span> Rota Livre. Projeto acadêmico — Global Solutions Substitutiva.</span>
+      <span>Conteúdo fictício para fins didáticos.</span>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/explorar.js"></script>
+</body>
+</html>

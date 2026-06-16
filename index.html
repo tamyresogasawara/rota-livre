@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rota Livre — Roteiros que ninguém te vendeu</title>
+  <meta name="description" content="Comunidade brasileira de turismo independente. Encontre rotas autorais, relatos verificados e viajantes reais para sair do circuito comercial." />
+  <meta name="theme-color" content="#b5532a" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Garante que Tailwind use as cores e fontes da identidade visual
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: "#1F2421",
+            sand: "#FAF7F2",
+            terracota: "#B5532A",
+            mato: "#3F6B3A"
+          },
+          fontFamily: {
+            display: ["Fraunces", "Georgia", "serif"],
+            body: ["Inter", "system-ui", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><circle cx='12' cy='12' r='12' fill='%23B5532A'/><text x='50%25' y='58%25' font-family='Georgia' font-size='14' text-anchor='middle' fill='white'>R</text></svg>" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Pular para o conteúdo</a>
+
+  <header class="site-header" role="banner">
+    <div class="container bar">
+      <a href="index.html" class="brand" aria-label="Rota Livre — voltar à página inicial">
+        <span class="brand-mark">R</span>
+        <span>Rota Livre</span>
+      </a>
+      <nav aria-label="Principal">
+        <ul class="nav-list">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="explorar.html">Explorar</a></li>
+          <li><a href="comunidade.html">Comunidade</a></li>
+          <li><a href="compartilhar.html">Compartilhar relato</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle" data-theme-toggle aria-label="Mudar tema">
+          <i data-lucide="sun-moon"></i>
+        </button>
+        <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-list">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="container section" aria-labelledby="hero-h">
+      <div class="hero">
+        <img class="hero-bg" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=70" alt="Vista panorâmica de montanhas brasileiras ao amanhecer" />
+        <div class="hero-content">
+          <span class="badge">Turismo independente</span>
+          <h1 id="hero-h">Roteiros que ninguém te vendeu.</h1>
+          <p>Rota Livre é uma comunidade de viajantes que compartilham trajetos autorais, dicas reais e relatos sinceros sobre destinos fora do circuito comercial brasileiro.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="explorar.html"><i data-lucide="compass"></i> Explorar rotas</a>
+            <a class="btn btn-ghost" href="compartilhar.html" style="background: rgba(255,255,255,.14); color: #fff; border-color: rgba(255,255,255,.4);"><i data-lucide="pen-line"></i> Compartilhar relato</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container section" aria-labelledby="por-que-h">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Como funciona</span>
+          <h2 id="por-que-h">Feito por quem foi, para quem ainda vai.</h2>
+        </div>
+        <p style="max-width: 320px; color: var(--color-muted); margin: 0;">
+          Sem agências, sem propaganda. Só relatos honestos de quem caminhou, pedalou ou navegou pela rota.
+        </p>
+      </div>
+      <div class="split">
+        <article class="feature-card">
+          <span class="icon"><i data-lucide="map"></i></span>
+          <h3>Rotas autorais</h3>
+          <p style="margin: 0; color: var(--color-muted);">Cada roteiro vem com itinerário detalhado dia a dia, escrito por quem fez o caminho — não copiado de catálogo.</p>
+        </article>
+        <article class="feature-card">
+          <span class="icon"><i data-lucide="badge-check"></i></span>
+          <h3>Relatos verificados</h3>
+          <p style="margin: 0; color: var(--color-muted);">A comunidade valida custos, melhor época e nível de dificuldade. Você sabe no que está se metendo.</p>
+        </article>
+        <article class="feature-card">
+          <span class="icon"><i data-lucide="users"></i></span>
+          <h3>Comunidade aberta</h3>
+          <p style="margin: 0; color: var(--color-muted);">Siga viajantes, troque dicas, encontre companhia para a próxima jornada. Tudo gratuito, tudo independente.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="container section" aria-labelledby="destaque-h">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Em destaque</span>
+          <h2 id="destaque-h">Rotas mais curtidas da semana</h2>
+        </div>
+        <a class="btn btn-ghost" href="explorar.html">Ver todas <i data-lucide="arrow-right"></i></a>
+      </div>
+      <div class="cards-grid" data-featured-grid aria-live="polite"></div>
+    </section>
+
+    <section class="container section" aria-labelledby="viajantes-h">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Comunidade</span>
+          <h2 id="viajantes-h">Viajantes em destaque</h2>
+        </div>
+        <a class="btn btn-ghost" href="comunidade.html">Ver todos <i data-lucide="arrow-right"></i></a>
+      </div>
+      <div class="cards-grid" data-featured-travelers></div>
+    </section>
+
+    <section class="container section" aria-labelledby="cta-h">
+      <div class="hero" style="min-height: 320px;">
+        <img class="hero-bg" src="https://images.unsplash.com/photo-1473773508845-188df298d2d1?auto=format&fit=crop&w=1600&q=70" alt="Mochileiro caminhando em estrada de terra ao entardecer" />
+        <div class="hero-content">
+          <span class="badge">Sua próxima rota</span>
+          <h2 id="cta-h" style="color: #fff;">Pronto pra dividir um caminho que mudou você?</h2>
+          <p>Conta sua história. Outras pessoas estão esperando ouvir.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="compartilhar.html"><i data-lucide="pen-line"></i> Publicar meu relato</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container grid">
+      <div>
+        <a href="index.html" class="brand"><span class="brand-mark">R</span><span>Rota Livre</span></a>
+        <p style="margin-top: 12px;">Plataforma colaborativa de relatos e rotas de turismo independente no Brasil.</p>
+      </div>
+      <div>
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="explorar.html">Explorar rotas</a></li>
+          <li><a href="comunidade.html">Comunidade</a></li>
+          <li><a href="compartilhar.html">Compartilhar relato</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Créditos</h4>
+        <ul>
+          <li>Imagens: Unsplash (uso editorial)</li>
+          <li>Ícones: Lucide</li>
+          <li>Tipografia: Fraunces &amp; Inter (Google Fonts)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="container credits">
+      <span>© <span data-year>2026</span> Rota Livre. Projeto acadêmico — Global Solutions Substitutiva.</span>
+      <span>Conteúdo fictício para fins didáticos.</span>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/home.js"></script>
+</body>
+</html>

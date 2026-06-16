@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Compartilhar relato — Rota Livre</title>
+  <meta name="description" content="Publique sua rota de turismo independente: itinerário, dicas e foto. Tudo grátis." />
+  <meta name="theme-color" content="#b5532a" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><circle cx='12' cy='12' r='12' fill='%23B5532A'/><text x='50%25' y='58%25' font-family='Georgia' font-size='14' text-anchor='middle' fill='white'>R</text></svg>" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Pular para o conteúdo</a>
+
+  <header class="site-header" role="banner">
+    <div class="container bar">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">R</span><span>Rota Livre</span>
+      </a>
+      <nav aria-label="Principal">
+        <ul class="nav-list">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="explorar.html">Explorar</a></li>
+          <li><a href="comunidade.html">Comunidade</a></li>
+          <li><a href="compartilhar.html">Compartilhar relato</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle" data-theme-toggle aria-label="Mudar tema"><i data-lucide="sun-moon"></i></button>
+        <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false"><i data-lucide="menu"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="container section" style="padding-top: 48px;">
+      <div style="max-width: 720px;">
+        <span class="eyebrow">Compartilhar</span>
+        <h1>Conta a sua rota</h1>
+        <p style="color: var(--color-muted);">Publique um relato com itinerário, dicas e uma foto. Você pode revisar e republicar quando quiser. O relato fica salvo no seu navegador e aparece imediatamente em <a href="explorar.html">Explorar</a>.</p>
+      </div>
+    </section>
+
+    <section class="container" style="padding-bottom: 80px;">
+      <form class="form-card" data-route-form novalidate aria-describedby="form-help">
+        <p id="form-help" style="margin: 0; color: var(--color-muted);">
+          Campos com <strong>*</strong> são obrigatórios.
+          <span data-form-error role="alert" aria-live="polite" style="color: #b8331b; display: block; margin-top: 8px;"></span>
+        </p>
+
+        <div class="form-row">
+          <label for="title">Título da rota *</label>
+          <input id="title" name="title" type="text" required data-required data-minlen="6"
+                 placeholder="ex.: Travessia do Vale do Pati em 6 dias" aria-describedby="title-err" />
+          <span class="error" id="title-err">Use ao menos 6 caracteres descritivos.</span>
+        </div>
+
+        <div class="form-grid-2">
+          <div class="form-row">
+            <label for="region">Região *</label>
+            <select id="region" name="region" required data-required aria-describedby="region-err">
+              <option value="">Selecione</option>
+              <option>Norte</option>
+              <option>Nordeste</option>
+              <option>Centro-Oeste</option>
+              <option>Sudeste</option>
+              <option>Sul</option>
+            </select>
+            <span class="error" id="region-err">Escolha uma região.</span>
+          </div>
+          <div class="form-row">
+            <label for="state">Estado(s)</label>
+            <input id="state" name="state" type="text" placeholder="ex.: BA, MG" />
+            <span class="hint">Sigla(s) separadas por vírgula.</span>
+          </div>
+        </div>
+
+        <div class="form-grid-2">
+          <div class="form-row">
+            <label for="duration">Duração *</label>
+            <input id="duration" name="duration" type="text" required data-required placeholder="ex.: 6 dias"
+                   aria-describedby="duration-err" />
+            <span class="error" id="duration-err">Informe quantos dias.</span>
+          </div>
+          <div class="form-row">
+            <label for="durationBucket">Categoria</label>
+            <select id="durationBucket" name="durationBucket">
+              <option value="short">Até 3 dias</option>
+              <option value="medium" selected>4 a 6 dias</option>
+              <option value="long">7 dias ou mais</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-grid-2">
+          <div class="form-row">
+            <label for="difficulty">Dificuldade *</label>
+            <select id="difficulty" name="difficulty" required data-required aria-describedby="difficulty-err">
+              <option value="">Selecione</option>
+              <option>Iniciante</option>
+              <option>Intermediário</option>
+              <option>Avançado</option>
+            </select>
+            <span class="error" id="difficulty-err">Escolha um nível.</span>
+          </div>
+          <div class="form-row">
+            <label for="bestSeason">Melhor época</label>
+            <input id="bestSeason" name="bestSeason" type="text" placeholder="ex.: Maio a setembro" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label for="cost">Custo médio</label>
+          <input id="cost" name="cost" type="text" placeholder="ex.: R$ 1.200 — R$ 1.800" />
+          <span class="hint">Inclua transporte, hospedagem e alimentação.</span>
+        </div>
+
+        <div class="form-row">
+          <label for="summary">Resumo *</label>
+          <textarea id="summary" name="summary" rows="3" required data-required data-minlen="40"
+                    placeholder="Conta em poucas linhas o que torna essa rota especial." aria-describedby="summary-err"></textarea>
+          <span class="error" id="summary-err">Resumo precisa de pelo menos 40 caracteres.</span>
+        </div>
+
+        <div class="form-row">
+          <label for="itinerary">Itinerário dia a dia *</label>
+          <textarea id="itinerary" name="itinerary" required data-required data-minlen="40"
+                    placeholder="Uma linha por dia, com 'Título: descrição'.
+ex.:
+Saída de Lençóis: ônibus até Guiné, dormida em pousada.
+Descida ao Cachoeirão: trilha íngreme de 4h." aria-describedby="itinerary-err"></textarea>
+          <span class="hint">Uma linha por dia. Pode usar o formato <em>Título: descrição</em>.</span>
+          <span class="error" id="itinerary-err">Descreva pelo menos um dia (mín. 40 caracteres).</span>
+        </div>
+
+        <div class="form-row">
+          <label for="tags">Tags</label>
+          <input id="tags" name="tags" type="text" placeholder="ex.: trekking, cachoeira, montanha" />
+          <span class="hint">Separe por vírgula.</span>
+        </div>
+
+        <div class="form-row">
+          <label for="photo">Foto de capa</label>
+          <input id="photo" name="photo" type="file" accept="image/*" />
+          <div class="image-preview" data-photo-preview aria-live="polite">Pré-visualização aparecerá aqui.</div>
+        </div>
+
+        <div class="form-actions">
+          <a class="btn btn-ghost" href="explorar.html">Cancelar</a>
+          <button class="btn btn-primary" type="submit"><i data-lucide="send"></i> Publicar relato</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container grid">
+      <div>
+        <a href="index.html" class="brand"><span class="brand-mark">R</span><span>Rota Livre</span></a>
+        <p style="margin-top: 12px;">Plataforma colaborativa de relatos e rotas de turismo independente no Brasil.</p>
+      </div>
+      <div>
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="explorar.html">Explorar rotas</a></li>
+          <li><a href="comunidade.html">Comunidade</a></li>
+          <li><a href="compartilhar.html">Compartilhar relato</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Créditos</h4>
+        <ul>
+          <li>Imagens: Unsplash (uso editorial)</li>
+          <li>Ícones: Lucide</li>
+          <li>Tipografia: Fraunces &amp; Inter (Google Fonts)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="container credits">
+      <span>© <span data-year>2026</span> Rota Livre. Projeto acadêmico — Global Solutions Substitutiva.</span>
+      <span>Conteúdo fictício para fins didáticos.</span>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/compartilhar.js"></script>
+</body>
+</html>
