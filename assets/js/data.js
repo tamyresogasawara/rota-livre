@@ -244,9 +244,9 @@
       region: "Nordeste",
       state: "MA",
       summary: "Mistura centro histórico, reggae maranhense e travessia das dunas com pernoites em comunidades.",
-      hero: PHOTO("photo-1518509562904-e7ef99cddc85"),
+      hero: PHOTO("photo-1530870110042-98b2cb110834"),
       gallery: [
-        PHOTO("photo-1518509562904-e7ef99cddc85"),
+        PHOTO("photo-1530870110042-98b2cb110834"),
         PHOTO("photo-1500530855697-b586d89ba3ee"),
         PHOTO("photo-1502691876148-a84978e59af8")
       ],
